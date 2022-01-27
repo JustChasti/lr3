@@ -15,9 +15,9 @@ def change_account_balance(delta, num):
     """
     logger.info(f"Поток {num} зашел")
     global balance
-    with balance_lock: # секция блокируется для одного потока
+    with balance_lock:  # секция блокируется для одного потока
         if delta > 0:
-            time.sleep(2) # тут проверка - что второй поток не пойдет, пока 1 не закончит менять баланс
+            time.sleep(2)  # тут проверка - что второй поток не пойдет, пока 1 не закончит менять баланс
         logger.info(f"Поток {num} меняет баланс")
         balance += delta
     logger.info(f"balance = {balance}")

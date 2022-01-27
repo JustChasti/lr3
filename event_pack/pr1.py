@@ -1,5 +1,6 @@
 import threading
-from resouce import create_resouce
+from resource import create_resouce
 
 
 first = threading.Thread(target=create_resouce, args=[1])
+first.start()
